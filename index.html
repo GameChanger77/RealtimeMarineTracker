@@ -1,24 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/index.css">
     <title>Realtime Marine Tracker</title>
 </head>
+
 <body>
-    <img src="./images/stolenboat.png" width="100" height="100">
     <script src="./index.js"></script>
-    
+
     <script>
-        setInterval(fetchData,2000);
+        setInterval(fetchData, 2000);
+        setInterval(move, 2000);
     </script>
 
     <header>
         <h1>Realtime Marine Tracker</h1>
-    </header>    
+    </header>
 
-    <p id="Temp"></p>
-    <p id="Humidity"></p>
-    <p id="Water Level"></p>
+
+    <div class="center-container">
+        <p id="Temp" class="data"></p>
+        <p id="Humidity" class="data"></p>
+        <div>
+            <div id="myWaterLevel">
+                <div id="myBar"></div>
+            </div>
+            <p id="Water Level" class="data"></p>
+            <img src="./images/stolenboat.png" width="100" height="100">
+        </div>
+    </div>
 </body>
+
 </html>

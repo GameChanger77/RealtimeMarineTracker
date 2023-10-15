@@ -4,6 +4,7 @@ function fetchData(){
 .then(data=>loadData(data));
 }
 
+let waterLevel = -1;
 function loadData(data){
     var tempContainer = document.getElementById("Temp");
     var humidityContainer = document.getElementById("Humidity");
@@ -12,11 +13,34 @@ function loadData(data){
 
     let temp = data.temp;
     let humidity = data.humidity;
-    let waterLevel = data.waterLevel;
+    waterLevel = data.waterLevel;
 
-    tempContainer.innerHTML = `${temp}`;
+    tempContainer.innerHTML = `${temp}<br>`;
 
-    humidityContainer.innerHTML = `${humidity}`;
+    humidityContainer.innerHTML = `${humidity}<br>`;
 
-    waterContainer.innerHTML = `${waterLevel}`;
+    waterContainer.innerHTML = `${waterLevel}<br>`;
+}
+
+var i = 0;
+function move() {
+    console.log("yarr");
+    if (i == 0) {
+        i = 1;
+        var myBar = document.getElementById("myBar");
+        var height = 1;
+        var id = setInterval(frame, 10);
+
+        function frame() {
+            height = (waterLevel - 170) / 1.8;
+            console.log(height);
+            if(height >= 0){
+            myBar.style.height = height + "%";
+            }
+            else
+            {
+                myBar.style.height = 0 + "%"; 
+            }
+        }
+    }
 }
