@@ -5,32 +5,18 @@ function fetchData(){
 }
 
 function loadData(data){
-    var mainContainer = document.getElementById("data");
+    var tempContainer = document.getElementById("Temp");
+    var humidityContainer = document.getElementById("Humidity");
+    var waterContainer = document.getElementById("Water Level");
     console.log(data);
 
     let temp = data.temp;
     let humidity = data.humidity;
     let waterLevel = data.waterLevel;
 
-    mainContainer.innerHTML = `
-    <h3>${temp}</h3><br>
-    ${humidity}<br>
-    ${waterLevel}<br>
-    `;
+    tempContainer.innerHTML = `${temp}`;
 
-    // for (let i=0; i<myMovies.movies.length; i++){
-    //     // let id = myMovies.movies[i].id;
-    //     let title = myMovies.movies[i].title;
-    //     let year = myMovies.movies[i].year;
-    //     let url = myMovies.movies[i].url;
+    humidityContainer.innerHTML = `${humidity}`;
 
-    //     console.log(title);
-
-    //     // DOM
-    //     let div = document.createElement("div");
-    //     div.innerHTML = 
-
-    //     mainContainer.appendChild(div);
-    // }
-
+    waterContainer.innerHTML = `${waterLevel}`;
 }
