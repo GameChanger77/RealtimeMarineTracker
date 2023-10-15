@@ -1,6 +1,8 @@
-fetch("./data.json")
+function fetchData(){
+    fetch("./data.json")
 .then(response=>response.json())
 .then(data=>loadData(data));
+}
 
 function loadData(data){
     var mainContainer = document.getElementById("data");
