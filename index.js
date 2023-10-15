@@ -8,10 +8,12 @@ function loadData(data){
 
     let temp = data.temp;
     let humidity = data.humidity;
+    let waterLevel = data.waterLevel;
 
     mainContainer.innerHTML = `
     <h3>${temp}</h3><br>
     ${humidity}<br>
+    ${waterLevel}<br>
     `;
 
     // for (let i=0; i<myMovies.movies.length; i++){
