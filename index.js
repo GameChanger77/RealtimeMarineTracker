@@ -21,6 +21,7 @@ function loadData(data){
     humidityContainer.innerHTML = `${humidity}<br>`;
 
     waterContainer.innerHTML = `${waterLevel}<br>`;
+    move();
 }
 
 var i = 0;
