@@ -1,12 +1,12 @@
-function fetchData(){
+function fetchData() {
     fetch("./data.json")
-.then(response=>response.json())
-.then(data=>loadData(data));
+        .then(response => response.json())
+        .then(data => loadData(data));
 }
 
 let waterLevel = -1;
 
-function loadData(data){
+function loadData(data) {
     var tempContainer = document.getElementById("Temp");
     var humidityContainer = document.getElementById("Humidity");
     var waterContainer = document.getElementById("Water Level");
@@ -16,13 +16,18 @@ function loadData(data){
     let humidity = data.humidity;
     waterLevel = data.waterLevel;
 
-    tempContainer.innerHTML = `${temp}<br>`;
+    tempContainer.innerHTML = `<strong>${temp}°F</strong><br>`;
 
-    humidityContainer.innerHTML = `${humidity}<br>`;
+    humidityContainer.innerHTML = `<strong>${humidity}%</strong><br>`;
 
-    waterContainer.innerHTML = `${waterLevel}<br>`;
+    // waterContainer.innerHTML = `${waterLevel}<br>`;
     move();
 }
+
+const elements = document.querySelectorAll(".circle-outline");
+elements.forEach(element => {
+    element.classList.add("circle-outline");
+});
 
 var i = 0;
 function move() {
@@ -36,12 +41,11 @@ function move() {
         function frame() {
             height = (waterLevel - 170) / 1.8;
             console.log(height);
-            if(height >= 0){
-            myBar.style.height = height + "%";
+            if (height >= 0) {
+                myBar.style.height = height + "%";
             }
-            else
-            {
-                myBar.style.height = 0 + "%"; 
+            else {
+                myBar.style.height = 0 + "%";
             }
         }
     }
