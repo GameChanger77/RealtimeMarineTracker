@@ -39,7 +39,7 @@ function move() {
         var id = setInterval(frame, 10);
 
         function frame() {
-            height = (waterLevel - 170) / 1.8;
+            height = 1.1159 * (waterLevel) - 353;
             console.log(height);
             if (height >= 0) {
                 myBar.style.height = height + "%";
