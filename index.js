@@ -5,6 +5,7 @@ function fetchData(){
 }
 
 let waterLevel = -1;
+
 function loadData(data){
     var tempContainer = document.getElementById("Temp");
     var humidityContainer = document.getElementById("Humidity");
@@ -20,6 +21,7 @@ function loadData(data){
     humidityContainer.innerHTML = `${humidity}<br>`;
 
     waterContainer.innerHTML = `${waterLevel}<br>`;
+    move();
 }
 
 var i = 0;
