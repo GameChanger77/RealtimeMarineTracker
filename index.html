@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./CSS/index.css">
+    <link rel="stylesheet" href="./styles/index.css">
     <title>Realtime Marine Tracker</title>
 </head>
 
@@ -21,8 +21,9 @@
 
 
     <div class="center-container">
-        <div>
-            <img src="./images/boat.png" width="100" height="100">
+        <div class="center-container">
+            <img src="./images/boat.png" width="150" height="150">
+            
             <div id="myWaterLevel">
                 <div id="myBar"></div>
             </div>
@@ -33,6 +34,9 @@
             <p id="Temp" class="data circle-outline"></p>
             <p id="Humidity" class="data circle-outline"></p>
         </div>
+    </div>
+    <div class ="status-text">
+        <p id="status">Loading...</p>
     </div>
 </body>
 

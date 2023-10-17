@@ -10,17 +10,27 @@ function loadData(data) {
     var tempContainer = document.getElementById("Temp");
     var humidityContainer = document.getElementById("Humidity");
     var waterContainer = document.getElementById("Water Level");
+    var statusContainer = document.getElementById("status");
     console.log(data);
 
     let temp = data.temp;
     let humidity = data.humidity;
     waterLevel = data.waterLevel;
 
-    tempContainer.innerHTML = `<strong>${temp}°F</strong><br>`;
+    tempContainer.innerHTML = `<p><strong>${temp}°F</strong><span class="label"><br>Temp.<span><p>`;
 
-    humidityContainer.innerHTML = `<strong>${humidity}%</strong><br>`;
+    humidityContainer.innerHTML = `<p><strong>${humidity}%</strong><span class="label"><br>Humidity<span><p>`;
 
     // waterContainer.innerHTML = `${waterLevel}<br>`;
+    if (1.1159 * (waterLevel) - 353 < 25) {
+        statusContainer.innerHTML = `Status: Nominal`;
+    } else {
+        statusContainer.innerHTML = `Status: WARNING!`;
+        statusContainer.style.color = "red";
+        statusContainer.style.fontSize = "40pt";
+    }
+
+    // statusContainer.innerHTML = `Status: ${1.1159 * (waterLevel) - 353 < 25 ? "Nominal" : "WARNING"}<br>`;
     move();
 }
 
@@ -31,7 +41,6 @@ elements.forEach(element => {
 
 var i = 0;
 function move() {
-    console.log("yarr");
     if (i == 0) {
         i = 1;
         var myBar = document.getElementById("myBar");
