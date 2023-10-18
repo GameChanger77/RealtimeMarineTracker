@@ -11,3 +11,5 @@ Realtime Marine Tracking software to run on a raspberry pi and display temperatu
 ```sudo apt-get install build-essential python-dev```
 
 ```sudo python setup.py install```
+
+
