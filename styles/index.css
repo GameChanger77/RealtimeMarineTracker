@@ -19,7 +19,7 @@ header {
 #myBar {
     height: 1%;
     width: 100%;
-    background-color: green;
+    background-color: rgb(0, 68, 128);
     transform: scaleY(-1);
 }
 
