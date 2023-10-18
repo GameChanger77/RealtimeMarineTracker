@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
-#
+# This is the code that should be ran on the raspberry pi to update the data.json file with the data from the two sensors.
+# Below are some commands to help get the necessary libraries installed but it may not be comprehensive. 
 #
 # sudo apt-get install git-core
 
@@ -20,8 +21,8 @@ print("Beginning Realtime Marine Tracking...")
 
 ser = serial.Serial('/dev/ttyACM0', 9600)
 
-lastTemp = None;
-lastHumidity = None;
+lastTemp = None
+lastHumidity = None
 
 while True:
     
@@ -33,8 +34,8 @@ while True:
         except Exception as e:
             print(e)
     
-    humidity = -1;
-    temperature = -99999;
+    humidity = -1
+    temperature = -99999
     humidity, temperature = Adafruit_DHT.read(11, 4)
     
     if humidity is None and temperature is None and lastTemp is not None and lastHumidity is not None:
