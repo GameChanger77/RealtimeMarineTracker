@@ -59,3 +59,9 @@ function move() {
         }
     }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+document.getElementById('about-button').addEventListener('click', function() {
+    window.location.href = 'about.html';
+});
+});
