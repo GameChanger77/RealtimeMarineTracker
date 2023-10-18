@@ -42,7 +42,10 @@ header>h1 {
 
 .info {
     margin-bottom: 20px;
+    margin-left: 300px;
+    margin-right: 300px;
     text-align: center;
+    justify-content: center;
 }
 
 .info label {
